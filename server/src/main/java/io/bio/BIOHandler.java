@@ -5,6 +5,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 import java.nio.charset.Charset;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -31,13 +32,15 @@ public class BIOHandler implements Runnable {
             int result = inputStream.read(buffer);
             String str = new String(buffer, "utf-8");
 //            System.err.println("from client info:" + str + "thread:" + Thread.currentThread().getId());
-            System.out.println("thread:" + Thread.currentThread().getId());
+            Integer sleepSecond =new Random().nextInt(20);
+            System.out.println("thread:" + Thread.currentThread().getId() + " start:" + sleepSecond + "seconds");
             String server = new String("from server：" + str);
             Charset cs = Charset.forName("utf-8");
-            TimeUnit.MILLISECONDS.sleep(100);
+            TimeUnit.SECONDS.sleep(sleepSecond);
             byte[] bytes = server.getBytes(cs);
             outputStream.write(bytes);
             outputStream.flush();
+            System.out.println("thread:" + Thread.currentThread().getId() + " sleep:" + sleepSecond + "seconds");
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
