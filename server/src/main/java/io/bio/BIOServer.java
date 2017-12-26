@@ -2,7 +2,6 @@ package io.bio;
 
 import io.ServerInterface;
 
-import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.concurrent.*;
@@ -21,7 +20,7 @@ public class BIOServer implements ServerInterface {
     }
 
     @Override
-    public void startService(int portNumber) throws IOException {
+    public void startService(int portNumber) throws Exception {
         System.out.println("BIOServer begin……");
         serverSocket = new ServerSocket(portNumber); // 等待客户端连接
         while (true) {

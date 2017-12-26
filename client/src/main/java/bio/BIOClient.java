@@ -1,3 +1,5 @@
+package bio;
+
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -9,7 +11,7 @@ import java.net.URL;
 /**
  * Created by SUN on 17/12/25.
  */
-public class StressTest {
+public class BIOClient {
     public static void main(String[] args) throws Exception {
         for (int i = 0; i <1000; i ++) {
             URL url = new URL("http://127.0.0.1:8089");
