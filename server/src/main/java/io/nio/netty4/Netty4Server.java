@@ -51,11 +51,6 @@ public class Netty4Server implements ServerInterface{
         bossGroup.shutdownGracefully();
     }
 
-    public static void main(String[] args) throws Exception {
-
-//            HelloServer.shutdown();
-    }
-
     @Override
     public void startService(int portNumber) throws Exception {
         PORT = portNumber;
