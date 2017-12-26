@@ -15,7 +15,7 @@ public class BIOServer implements ServerInterface {
     private static ServerSocket serverSocket;
     private static Socket socket;
 //    private static ExecutorService executeService = Executors.newCachedThreadPool();
-    private static ExecutorService executeService = new ThreadPoolExecutor(0, 10, 60L, TimeUnit.SECONDS, new SynchronousQueue<Runnable>());
+    private static ExecutorService executeService = new ThreadPoolExecutor(0, 1000, 60L, TimeUnit.SECONDS, new SynchronousQueue<Runnable>());
 
     public BIOServer() {
     }

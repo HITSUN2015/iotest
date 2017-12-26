@@ -11,7 +11,7 @@ import java.net.URL;
  */
 public class StressTest {
     public static void main(String[] args) throws Exception {
-        for (int i = 0; i <11; i ++) {
+        for (int i = 0; i <1000; i ++) {
             URL url = new URL("http://127.0.0.1:8089");
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
 
