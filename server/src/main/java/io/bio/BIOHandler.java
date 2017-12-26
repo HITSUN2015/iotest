@@ -28,6 +28,8 @@ public class BIOHandler implements Runnable {
         runLogWithFile();
     }
 
+    //测试时,超出线程池范围,就会报错,后续会陆续的 线程池关闭线程,程序停止
+    //todo console的线程阻塞原因
     private void runLogWithConsole(){
         try {
             inputStream = socket.getInputStream();
@@ -62,7 +64,7 @@ public class BIOHandler implements Runnable {
         }
     }
 
-    //由于 上面 console
+    //由于 上面 console 总是最后一秒 全打出,所以想测试 是不是线程 都是最后才执行,然后 就用了file输出,发现并不是,file输出 都是按照启动顺序
     private void runLogWithFile() {
         try {
             inputStream = socket.getInputStream();
@@ -103,7 +105,4 @@ public class BIOHandler implements Runnable {
             }
         }
     }
-
-
-
 }
